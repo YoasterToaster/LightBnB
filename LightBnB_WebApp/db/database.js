@@ -161,9 +161,7 @@ const addProperty = function (property) {
   properties[propertyId] = property;
   return Promise.resolve(property);
 };
-getAllProperties({city: 'Vancouver', owner_id: 222,  minimum_price_per_night: 5,
-maximum_price_per_night: 500000,
-minimum_rating: 4}, 1).then(response => {console.log(response)});
+
 
 module.exports = {
   getUserWithEmail,
