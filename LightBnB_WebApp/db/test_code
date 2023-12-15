@@ -1,0 +1,24 @@
+// getAllProperties({city: 'Vancouver', owner_id: 222,  minimum_price_per_night: 5,
+// maximum_price_per_night: 500000,
+// minimum_rating: 4}, 1).then(response => {console.log(response)});
+
+/*
+SELECT properties.*, avg(property_reviews.rating) as average_rating
+   FROM properties
+   JOIN property_reviews ON properties.id = property_id
+   WHERE city LIKE '%ancouve%' AND owner_id = 222 
+   GROUP BY properties.id
+   ORDER BY cost_per_night
+   LIMIT 10;
+
+
+
+   SELECT properties.*, avg(property_reviews.rating) as average_rating
+   FROM properties
+   JOIN property_reviews ON properties.id = property_id
+   WHERE city LIKE $1 AND owner_id = $2 AND cost_per_night >= ($3 * 100) AND cost_per_night <= ($4 * 100) 
+   GROUP BY properties.id
+   HAVING avg(property_reviews.rating) >= $5 
+   ORDER BY cost_per_night
+   LIMIT $6;
+*/
